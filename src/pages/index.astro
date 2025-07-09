@@ -1,0 +1,77 @@
+---
+import NavigationBar from '../components/NavigationBar.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<NavigationBar />
+	<div class="crt">
+		<div class="centered">
+			<div class="welcome">WELCOME TO MY PORTFOLIO</div>
+			<div class="name">Kamlesh K</div>
+			<div class="title">Full Stack Web Developer<span class="cursor"></span></div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.crt {
+		background: black;
+		color: neon-green;
+		font-family: 'Courier New', Courier, monospace;
+		font-size: 1.5rem;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.centered {
+		perspective: 1000px;
+	}
+	.welcome {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		animation: fadeIn 2s;
+	}
+	.name {
+		font-size: 3rem;
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+		animation: fadeIn 2s;
+	}
+	.title {
+		font-size: 2rem;
+		animation: fadeIn 2s;
+	}
+	.cursor {
+		display: inline-block;
+		width: 1rem;
+		height: 2rem;
+		background-color: neon-green;
+		animation: blink 1s infinite;
+		margin-left: 0.2rem;
+	}
+	@keyframes blink {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+	}
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

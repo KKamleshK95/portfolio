@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+  {
+    title: "Retro Portfolio",
+    description: "A personal portfolio website with a 90s computer UI aesthetic.",
+    tech: ["Astro", "CSS", "Press Start 2P"],
+    github: "https://github.com/yourusername/retro-portfolio",
+    demo: "https://your-retro-portfolio.com"
+  },
+  {
+    title: "Pixel Chat",
+    description: "A real-time chat app styled like a DOS terminal.",
+    tech: ["React", "Node.js", "Socket.io"],
+    github: "https://github.com/yourusername/pixel-chat"
+  },
+  {
+    title: "Floppy Blog",
+    description: "A blog platform with pixel fonts and CRT effects.",
+    tech: ["Astro", "Markdown", "Netlify"],
+    github: "https://github.com/yourusername/floppy-blog"
+  }
+];
+---
+<Layout>
+  <NavigationBar />
+  <main class="projects-main">
+    <h1 class="projects-title flicker">PROJECTS</h1>
+    <div class="projects-grid">
+      {projects.map((p) => (
+        <ProjectCard {...p} />
+      ))}
+    </div>
+  </main>
+</Layout>

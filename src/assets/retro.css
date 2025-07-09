@@ -1,0 +1,209 @@
+body {
+  min-height: 100vh;
+  background: #181818;
+  color: #39ff14;
+  font-family: 'Press Start 2P', 'VT323', monospace, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.crt {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px #39ff14, 0 0 10px #39ff14 inset;
+}
+.crt::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  z-index: 2;
+}
+
+.navbar {
+  width: 100vw;
+  background: #222;
+  border-bottom: 2px solid #39ff14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar a {
+  color: #39ff14;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 2px #39ff14;
+  transition: color 0.2s;
+}
+.navbar a:hover {
+  color: #fff;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.welcome {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14;
+}
+
+.name {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14;
+}
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  background: #39ff14;
+  margin-left: 0.2rem;
+  animation: blink 1s steps(1) infinite;
+  vertical-align: bottom;
+  height: 1.2em;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Project grid and card styles */
+.projects-main {
+  padding: 6rem 1rem 2rem 1rem;
+  min-height: 100vh;
+  background: #181818;
+}
+.projects-title {
+  color: #39ff14;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #39ff14;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.project-card {
+  background: #111;
+  border: 2px solid #39ff14;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #39ff14, 0 0 2px #39ff14 inset;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.project-card:hover {
+  box-shadow: 0 0 32px #39ff14, 0 0 8px #39ff14 inset;
+  transform: translateY(-4px) scale(1.02);
+}
+.project-title {
+  font-size: 1.3rem;
+  color: #39ff14;
+  margin-bottom: 0.7rem;
+  font-family: 'Press Start 2P', 'VT323', monospace, sans-serif;
+  text-shadow: 0 0 6px #39ff14;
+}
+.project-desc {
+  color: #baffc9;
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+  font-family: 'VT323', 'Press Start 2P', monospace, sans-serif;
+}
+.project-tech {
+  color: #39ff14;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-family: 'VT323', 'Press Start 2P', monospace, sans-serif;
+}
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+.retro-btn {
+  background: #181818;
+  color: #39ff14;
+  border: 2px solid #39ff14;
+  border-radius: 4px;
+  padding: 0.4rem 1.2rem;
+  font-family: 'Press Start 2P', 'VT323', monospace, sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-shadow: 0 0 4px #39ff14;
+  box-shadow: 0 0 8px #39ff14 inset;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.retro-btn:hover {
+  background: #39ff14;
+  color: #181818;
+  box-shadow: 0 0 16px #39ff14;
+}
+
+.flicker {
+  animation: flicker 2s infinite alternate;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14; }
+  50% { opacity: 0.85; text-shadow: 0 0 16px #39ff14, 0 0 4px #39ff14; }
+}
+@media (max-width: 600px) {
+  .name { font-size: 1.2rem; }
+  .title { font-size: 0.8rem; }
+  .welcome { font-size: 0.8rem; }
+  .navbar ul { gap: 1rem; }
+}
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-main {
+    padding-top: 5rem;
+  }
+}

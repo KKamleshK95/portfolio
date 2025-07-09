@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  github?: string;
+  demo?: string;
+}
+const { title, description, tech, github, demo } = Astro.props;
+---
+<div class="project-card crt">
+  <div class="project-title">{title}</div>
+  <div class="project-desc">{description}</div>
+  <div class="project-tech">{tech.join(', ')}</div>
+  <div class="project-links">
+    {github && <a href={github} target="_blank" rel="noopener" class="retro-btn">GitHub</a>}
+    {demo && <a href={demo} target="_blank" rel="noopener" class="retro-btn">Live Demo</a>}
+  </div>
+</div>

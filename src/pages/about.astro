@@ -1,0 +1,117 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+---
+<Layout>
+  <NavigationBar />
+  <main class="about-main">
+    <h1 class="about-title flicker">ABOUT ME</h1>
+    <div class="about-content">
+      <div class="about-bio">
+        <p>
+          Hi! I'm Kamlesh K, a passionate Full Stack Web Developer who loves building web experiences with a retro twist. My journey began with curiosity for old-school computers and pixel art, and now I blend modern tech with nostalgic design. I enjoy crafting accessible, responsive, and fun digital products that stand out.
+        </p>
+        <p>
+          When I'm not coding, you'll find me exploring vintage tech, pixel art, or tinkering with new frameworks. Let's build something awesome together!
+        </p>
+      </div>
+      <div class="about-idcard">
+        <div class="pixel-avatar"></div>
+        <ul class="skills-list">
+          <li>Astro</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>CSS/SCSS</li>
+          <li>MongoDB</li>
+          <li>TypeScript</li>
+          <li>Pixel Art</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</Layout>
+<style>
+.about-main {
+  padding: 6rem 1rem 2rem 1rem;
+  min-height: 100vh;
+  background: #181818;
+  color: #39ff14;
+  font-family: 'Press Start 2P', 'VT323', monospace, sans-serif;
+}
+.about-title {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 8px #39ff14;
+}
+.flicker {
+  animation: flicker 2s infinite alternate;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14; }
+  50% { opacity: 0.85; text-shadow: 0 0 16px #39ff14, 0 0 4px #39ff14; }
+}
+.about-content {
+  display: flex;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.about-bio {
+  flex: 2 1 550px;
+  font-size: 1rem;
+  color: #baffc9;
+  background: #111;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 8px #39ff14 inset;
+  line-height: 25px;
+    font-family: 'VT323', 'Press Start 2P', monospace, sans-serif;
+}
+.about-idcard {
+  flex: 1 1 220px;
+  background: #222;
+  border: 2px solid #39ff14;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 12px #39ff14, 0 0 2px #39ff14 inset;
+}
+.pixel-avatar {
+  width: 64px;
+  height: 64px;
+  background: url('/src/assets/astro.svg') center/cover no-repeat, #181818;
+  border: 2px solid #39ff14;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 8px #39ff14;
+}
+.skills-list {
+  list-style: square inside;
+  padding: 0;
+  margin: 0;
+  color: #39ff14;
+  font-size: 0.9rem;
+  font-family: 'VT323', 'Press Start 2P', monospace, sans-serif;
+}
+.skills-list li {
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px #39ff14;
+}
+@media (max-width: 700px) {
+  .about-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about-bio, .about-idcard {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+</style>
