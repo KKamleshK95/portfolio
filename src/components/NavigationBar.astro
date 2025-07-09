@@ -13,3 +13,45 @@ const links = [
     ))}
   </ul>
 </nav>
+<style>
+.navbar {
+  width: 100vw;
+  background: #181818cc;
+  border-bottom: 2px solid #39ff14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px #39ff1466;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar li {
+  margin: 0;
+}
+.navbar a {
+  color: #baffc9;
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  font-family: 'Press Start 2P', 'VT323', monospace, sans-serif;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-shadow: 0 0 6px #39ff14;
+}
+.navbar a:hover, .navbar a:focus {
+  background: #39ff14;
+  color: #181818;
+  box-shadow: 0 0 8px #39ff14;
+}
+</style>

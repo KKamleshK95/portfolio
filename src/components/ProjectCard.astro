@@ -17,3 +17,61 @@ const { title, description, tech, github, demo } = Astro.props;
     {demo && <a href={demo} target="_blank" rel="noopener" class="retro-btn">Live Demo</a>}
   </div>
 </div>
+<style>
+.project-card {
+  background: linear-gradient(135deg, #181818 60%, #232323 100%);
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  box-shadow: 0 0 24px #39ff14, 0 0 4px #39ff14 inset;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.project-title {
+  font-size: 1.4rem;
+  color: #39ff14;
+  margin-bottom: 0.7rem;
+  font-family: 'Press Start 2P', 'VT323', monospace, sans-serif;
+  text-shadow: 0 0 8px #39ff14;
+}
+.project-desc {
+  color: #baffc9;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+  font-family: 'VT323', 'Press Start 2P', monospace, sans-serif;
+}
+.project-tech {
+  color: #39ff14;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-family: 'VT323', 'Press Start 2P', monospace, sans-serif;
+}
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+.retro-btn {
+  background: #181818;
+  color: #39ff14;
+  border: 2px solid #39ff14;
+  border-radius: 4px;
+  padding: 0.4rem 1.2rem;
+  font-family: 'Press Start 2P', 'VT323', monospace, sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-shadow: 0 0 4px #39ff14;
+  box-shadow: 0 0 8px #39ff14 inset;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.retro-btn:hover {
+  background: #39ff14;
+  color: #181818;
+  box-shadow: 0 0 16px #39ff14;
+}
+</style>

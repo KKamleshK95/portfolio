@@ -8,14 +8,62 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<NavigationBar />
-	<div class="crt">
-		<div class="centered">
-			<div class="welcome">WELCOME TO MY PORTFOLIO</div>
-			<div class="name">Kamlesh K</div>
-			<div class="title">Full Stack Web Developer<span class="cursor"></span></div>
+	<div class="crt home-crt">
+		<div class="centered home-centered">
+			<div class="welcome home-welcome">WELCOME TO MY PORTFOLIO</div>
+			<div class="name home-name">Kamlesh K</div>
+			<div class="title home-title">Full Stack Web Developer<span class="cursor"></span></div>
 		</div>
 	</div>
 </Layout>
 
 <style>
+.home-crt {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #181818 60%, #222 100%);
+  box-shadow: 0 0 60px #39ff14, 0 0 20px #39ff14 inset;
+}
+.home-centered {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+.home-welcome {
+  font-size: 1.5rem;
+  color: #39ff14;
+  text-shadow: 0 0 12px #39ff14;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  animation: fadeIn 1.5s;
+}
+.home-name {
+  font-size: 2.8rem;
+  color: #baffc9;
+  text-shadow: 0 0 16px #39ff14;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  animation: fadeIn 2s;
+}
+.home-title {
+  font-size: 1.3rem;
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14;
+  margin-bottom: 2rem;
+  animation: fadeIn 2.5s;
+}
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  background: #39ff14;
+  margin-left: 0.2rem;
+  animation: blink 1s steps(1) infinite;
+  vertical-align: bottom;
+  height: 1.2em;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
 </style>
